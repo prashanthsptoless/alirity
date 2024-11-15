@@ -1,7 +1,7 @@
 //Common enviroment Variables 
 //********************************************************************************************
-env = ""
-postfix  = ""
+env     = ""
+postfix = ""
 
 location = ""
 tags = {
@@ -14,20 +14,29 @@ tags = {
 
 //Resource Group Variables 
 //********************************************************************************************
-rg_name  = []
+rg_name = []
 
 
 //Virtual Network Variables 
 //********************************************************************************************
-vnet_name_hub     = ""
-address_space_hub = ["10.0.0.0/0"]
-vnet_name_spoke   = ""
+vnet_name_hub       = ""
+address_space_hub   = ["10.0.0.0/0"]
+vnet_name_spoke     = ""
 address_space_spoke = ["10.0.0.0/0"]
 //Subnet Variables 
 //********************************************************************************************
-subnet_name              = ""
-subnet_prefixes          = ["10.0.0.0/24"]
-subnet_service_endpoints = ["Microsoft.Web"]
+subnet1_name              = ""
+subnet1_prefixes          = ["10.0.0.0/24"]
+subnet1_service_endpoints = ["Microsoft.Web"]
+
+subnet2_name              = ""
+subnet2_prefixes          = ""
+subnet2_service_endpoints = ""
+
+subnet_spoke_name_01              = ""
+subnet_spoke_prefixes_01          = ""
+subnet_spoke_service_endpoints_01 = ""
+
 
 //NSG Variables 
 //********************************************************************************************

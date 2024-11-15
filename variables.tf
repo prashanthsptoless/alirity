@@ -72,6 +72,19 @@ variable "subnet2_service_endpoints" {
   type        = list(string)
   default     = []
 }
+variable "subnet_spoke_name_01" {
+  description = "A list of public subnets inside the vNet."
+  type        = string
+}
+variable "subnet_spoke_prefixes_01" {
+  description = "The address prefix to use for the subnet."
+  type        = list(string)
+}
+variable "subnet_spoke_service_endpoints_01" {
+  description = "A map of subnet name to service endpoints to add to the subnet."
+  type        = list(string)
+  default     = []
+}
 //********************************************************************************************
 
 //Route Table 1 and routes for rt1 variables
