@@ -30,11 +30,19 @@ variable "rg_name" {
 
 //VNET Variables 
 //********************************************************************************************
-variable "vnet_name" {
+variable "vnet_name_hub" {
   description = "Name of the vnet to create"
   type        = string
 }
-variable "address_space" {
+variable "address_space_hub" {
+  type        = list(string)
+  description = "The address space that is used by the virtual network."
+}
+variable "vnet_name_spoke" {
+  description = "Name of the vnet to create"
+  type        = string
+}
+variable "address_space_spoke" {
   type        = list(string)
   description = "The address space that is used by the virtual network."
 }
