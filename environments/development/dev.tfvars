@@ -1,81 +1,76 @@
-#General variables
-solution                = "mpmt"
-owner                   = "alirity"
-environment             = "development"
-env_prefix              = "dev"
-subscription_prefix     = "dev"
-location                = "northeurope"
-region_prefix           = "ne"
-business_unit           = "it"
-resource_group_prefix   = "rg"
-ordinal_prefix          = "01"
-subscription_id         = ""
-project                 = "mpmt"
-rg_prefix1              = "ntw"
-rg_prefix2              = "dastg"
-rg_prefix3              = "appser"
-rg_prefix4              = "orches"
+//Common enviroment Variables 
+//********************************************************************************************
+env     = ""
+postfix = ""
 
-#network variables
-network_prefix          = "vnet"
-hub_address_space       = ["10.10.0.0/24"]
-hub_subnet_prefix       = [
-    {
-      ip              = "10.10.0.0/26"
-      name            = "AzureFirewallSubnet"
-    },
-    {
-      ip              = "10.10.0.64/26"
-      name            = "AzureBastionSubnet"
-    },
-    {
-      ip              = "10.10.0.128/26"
-      name            = "GatewaySubnet"
-    }
-]
-spoke_address_space           = ["10.20.0.0/24"]
-spoke_subnet_prefix           = [
-    {
-      ip              = "10.20.0.0/27"
-      name            = "snet-data-orchest-tier"
-      serviceendpoint = ["Microsoft.Web","Microsoft.KeyVault","Microsoft.Storage"]
-      privateendpoint = "true"
-    },
-    {
-      ip              = "10.20.0.32/27"
-      name            = "snet-appser-tier"
-      serviceendpoint = ["Microsoft.KeyVault","Microsoft.Web"]
-      privateendpoint = "false"
-    },
-    {
-      ip              = "10.20.0.64/27"
-      name            = "snet-calc-tier"
-      serviceendpoint = ["Microsoft.KeyVault","Microsoft.Web"]
-      privateendpoint = "false"
-    },
-    {
-      ip              = "10.20.0.96/27"
-      name            = "snet-privateendpoint"
-    }
-]
+location = ""
+tags = {
+  "environment" = ""
+  "project"     = ""
+  "client_name" = ""
+  "business"    = ""
+}
+//********************************************************************************************
 
-#storage variables
-storage_account           = "stg"
-storage_account_type      = ""
-account_tier              = "Standard"
-account_replication_type        = "LRS"
-
-#app-service variables
-app_service_plan   = "asp"
-web_app            = ""
-function_app       = ""
+//Resource Group Variables 
+//********************************************************************************************
+rg_name = []
 
 
-#sql-database variables
-sql_server             = ""
-sql_server_admin_user  = ""
-sql_server_admin_password = ""
-sql_db                 = ""
+//Virtual Network Variables 
+//********************************************************************************************
+vnet_name_hub       = ""
+address_space_hub   = ["10.0.0.0/0"]
+vnet_name_spoke     = ""
+address_space_spoke = ["10.0.0.0/0"]
+//Subnet Variables 
+//********************************************************************************************
+subnet1_name              = ""
+subnet1_prefixes          = ["10.0.0.0/24"]
+subnet1_service_endpoints = ["Microsoft.Web"]
 
-# key vault variables
-key_vault          = "kv"
+subnet2_name              = ""
+subnet2_prefixes          = ""
+subnet2_service_endpoints = ""
+
+subnet_spoke_name_01              = ""
+subnet_spoke_prefixes_01          = ""
+subnet_spoke_service_endpoints_01 = ""
+
+
+//NSG Variables 
+//********************************************************************************************
+nsg_name = ""
+
+// Application Insights Variables
+//**********************************************************************************************
+app_insights_name            = ""
+app_insights_name_fep_member = ""
+
+// Variables Private Dns Zone = 
+//**********************************************************************************************
+private_dns_zone_name           = [""]
+private_dns_zone_vnet_link_name = ""
+
+//Azure Log analytics workspace Variables
+//**************************************************************************************
+log_analytics_workspace_name    = ""
+log_analytics_workspace_rg_name = ""
+
+//Variables for Storage Account 01
+//****************************************************************************
+storage_account_name             = ""
+storage_account_container_name01 = ""
+storage_account_container_name02 = ""
+storage_account_container_name03 = ""
+
+
+// Required Variables for First App Service Plan 
+//**********************************************************************************************
+app_service_plan_app_name            = ""
+app_service_plan_kind                = ""
+app_service_plan_max_elastic_workers = ""
+
+// Create the Function App Resource variables
+//**********************************************************************************************
+function_app_name = ""
