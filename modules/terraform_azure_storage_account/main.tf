@@ -1,7 +1,7 @@
 // Deploy the storage account
 //**********************************************************************************************
 resource "azurerm_storage_account" "storage_account_01" {
-  name                          = "${var.env}-${var.postfix}-${var.storage_account_name}"
+  name                          = "${var.env}${var.postfix}${var.storage_account_name}"
   resource_group_name           = var.resource_group_name
   location                      = var.location
   account_tier                  = var.storage_account_tier
